@@ -11,10 +11,15 @@ ui = uic.loadUiType(__location__ + "/OBD2/mainwindow.ui")[0]
 
 
 def refresh():
-	functions.scan()
-	window.update_values()
 
 
+
+	def jank():
+		functions.scan()
+		window.update_values()
+		threading.Timer(0.1, jank).start()
+
+	jank()
 
 class gui(QtGui.QMainWindow, ui):
 	
