@@ -12,8 +12,6 @@ ui = uic.loadUiType(__location__ + "/OBD2/mainwindow.ui")[0]
 
 def refresh():
 
-
-
 	def jank():
 		functions.scan()
 		window.update_values()
